@@ -23,7 +23,7 @@ function parse(phrase) {
             } else if (i == 0) {
                 if (learned[items[i+1]]) {
                     if (learned[items[i+2]]) {
-                        if ((learned[items[i+1]] == learned[items[i+2]]) || (learned[items[i+1]] == items[i+2]) || (items[i+1] == learned[items[i+2]])) {
+                        if (learned[items[i+1]] == learned[items[i+2]]) {
                             result = "yes, they are equal";
                         } else {
                             result = "no, they are not equal";
