@@ -25,14 +25,18 @@ function parse(phrase) {
         if (items[i] == "what" && items[i+1] == "is" && items[items.length-1].slice(-1) == "?") {
             subject = items[i+2].slice(0,-1);
             if (learned[subject]) {
-                result = subject + " means " + learned[subject];
+                result = learned[subject];
             } else {
                 result = "sorry, I don't know what " + subject + " is...";
             }
             break;
         } else if (items[i] == "is") {
             if (i != 0) {
-                learned[items[i-1]] = items[i+1];
+                if (learned[items[i-1]] = items[i+1]) {
+                  result = true;
+                } else {
+                  result = false;
+                }
             } else if (i == 0) {
                 if (learned[items[i+1]]) {
                     if (learned[items[i+2]]) {
