@@ -6,8 +6,8 @@ var learned = {}
 function init() {
     var commands = new Array();
     commands.push("x is y");
-    commands.push("is x y?");
     commands.push("what is x?");
+    commands.push("is x y?");
     for (i = 0; i < commands.length; i++) {
         document.getElementById('command-list').innerHTML += "<li>" + commands[i] + "</li>";
     }
@@ -38,12 +38,13 @@ function parse(phrase) {
                   result = false;
                 }
             } else if (i == 0) {
+                items[i+2] = items[i+2].replace("?", "");  // take out ? marks
                 if (learned[items[i+1]]) {
                     if (learned[items[i+2]]) {
                         if (learned[items[i+1]] == learned[items[i+2]]) {
-                            result = "yes, they are equal";
+                            result = true;
                         } else {
-                            result = "no, they are not equal";
+                            result = false;
                         }
                     } else {
                         result = "sorry, I don't know what " + items[i+2] + " is...";
