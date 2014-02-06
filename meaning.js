@@ -53,10 +53,10 @@ function parse(phrase) {
               result = false;
             }
           } else {
-            result = "sorry, I don't know what " + items[i+2] + " is...";
+            result = ask("hmm... what is " + items[i+2] + "?");
           }
         } else {
-          result = "sorry, I don't know what " + items[i+1] + " is...";
+          result = ask("hmm... what is " + items[i+1] + "?");
         }
       } else {
       }
