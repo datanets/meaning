@@ -1,23 +1,36 @@
 // Meaning
 // a quest for meaning
-//
-// phrases:
-//  x is y
-//  is x y?
-// 
 
 var learned = {}
 
-function learn(word) {
+function init() {
+    var commands = new Array();
+    commands.push("x is y");
+    commands.push("is x y?");
+    commands.push("what is x?");
+    for (i = 0; i < commands.length; i++) {
+        document.getElementById('command-list').innerHTML += "<li>" + commands[i] + "</li>";
+    }
+}
+
+function output(output) {
+    document.getElementById("output").value = output;
 }
 
 function parse(phrase) {
     var result = "";
-    phrase = phrase.replace("?","");    // take out question marks
     var items = phrase.split(" ");
     
     for (i = 0; i < items.length; i++) {
-        if (items[i] == "is") {
+        if (items[i] == "what" && items[i+1] == "is" && items[items.length-1].slice(-1) == "?") {
+            subject = items[i+2].slice(0,-1);
+            if (learned[subject]) {
+                result = subject + " means " + learned[subject];
+            } else {
+                result = "sorry, I don't know what " + subject + " is...";
+            }
+            break;
+        } else if (items[i] == "is") {
             if (i != 0) {
                 learned[items[i-1]] = items[i+1];
             } else if (i == 0) {
@@ -41,13 +54,10 @@ function parse(phrase) {
     return result;
 }
 
-function output(output) {
-    document.getElementById("output").value = output;
-}
-
 function main() {
     input = document.getElementById("input").value;
     result = parse(input);
     output(result);
+    document.getElementById("input").value = "";    // clear input textbox
     console.log(learned);   // display what we've learned
 }
