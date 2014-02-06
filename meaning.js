@@ -13,6 +13,11 @@ function init() {
   }
 }
 
+function ask(question) {
+  output(question);
+  return question;
+}
+
 function output(output) {
   document.getElementById("output").value = output;
 }
@@ -27,7 +32,8 @@ function parse(phrase) {
       if (learned[subject]) {
         result = learned[subject];
       } else {
-        result = "sorry, I don't know what " + subject + " is...";
+        // meaning not yet learned
+        result = ask("hmm... what is " + subject + "?");
       }
       break;
     } else if (items[i] == "is") {
