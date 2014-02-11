@@ -2,6 +2,7 @@ meaning TODO
 ============
 - complex meanings (combinations of previously-learned definitions) >and
 -- iterate through meanings
+-- check if we know the meanings to all newly attached meanings 
 - parse "what (something else here) is __?"
 - take away hard codings of parsed tokens
 - abstract out parse function
