@@ -25,7 +25,7 @@ function output(output) {
 
 function parse(phrase) {
   var result = "";
-  var items = phrase.split(" ");
+  items = tokenize(phrase);
 
   for (i = 0; i < items.length; i++) {
     // command: query
@@ -42,10 +42,19 @@ function parse(phrase) {
     } else if (items[i] == "is") {
       // command: define
       if (i != 0) {
-        if (learned[items[i-1]] = {"meaning": items[i+1]}) {
-          result = true;
+        // AND
+        if (items[i+2] == "and") {
+          if (learned[items[i-1]] = {"meaning": [items[i+1], items[i+3]]}) {
+            result = true;
+          } else {
+            result = false;
+          }
         } else {
-          result = false;
+          if (learned[items[i-1]] = {"meaning": items[i+1]}) {
+            result = true;
+          } else {
+            result = false;
+          }
         }
       // command: query
       } else if (i == 0) {
@@ -68,6 +77,11 @@ function parse(phrase) {
     }
   }
   return result;
+}
+
+function tokenize(input) {
+  var items = input.split(" ");
+  return items;
 }
 
 function main() {
