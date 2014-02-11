@@ -4,5 +4,7 @@ meaning TODO
 -- iterate through meanings
 - parse "what (something else here) is __?"
 - take away hard codings of parsed tokens
+- abstract out parse function
+
 - add context to meaning
 -- >when
