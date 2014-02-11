@@ -9,7 +9,8 @@ function init() {
   commands.push("what is x?");
   commands.push("is x y?");
   for (i = 0; i < commands.length; i++) {
-      document.getElementById('command-list').innerHTML += "<li>" + commands[i] + "</li>";
+    document.getElementById('command-list').innerHTML +=
+      "<li>" + commands[i] + "</li>";
   }
 }
 
@@ -25,29 +26,33 @@ function output(output) {
 function parse(phrase) {
   var result = "";
   var items = phrase.split(" ");
-  
+
   for (i = 0; i < items.length; i++) {
-    if (items[i] == "what" && items[i+1] == "is" && items[items.length-1].slice(-1) == "?") {
+    // command: query
+    if (items[i] == "what" && items[i+1] == "is"
+      && items[items.length-1].slice(-1) == "?") {
       subject = items[i+2].slice(0,-1);
       if (learned[subject]) {
-        result = learned[subject];
+        result = learned[subject]["meaning"];
       } else {
         // meaning not yet learned
         result = ask("hmm... what is " + subject + "?");
       }
       break;
     } else if (items[i] == "is") {
+      // command: define
       if (i != 0) {
-        if (learned[items[i-1]] = items[i+1]) {
+        if (learned[items[i-1]] = {"meaning": items[i+1]}) {
           result = true;
         } else {
           result = false;
         }
+      // command: query
       } else if (i == 0) {
         items[i+2] = items[i+2].replace("?", "");  // take out ? marks
         if (learned[items[i+1]]) {
           if (learned[items[i+2]]) {
-            if (learned[items[i+1]] == learned[items[i+2]]) {
+            if (learned[items[i+1]]["meaning"] == learned[items[i+2]]["meaning"]) {
               result = true;
             } else {
               result = false;
@@ -69,6 +74,9 @@ function main() {
   input = document.getElementById("input").value;
   result = parse(input);
   output(result);
+  // add to running log
+  document.getElementById("log").innerHTML +=
+    "> " + input + " -- " + result + "<br>";
   document.getElementById("input").value = "";    // clear input textbox
   console.log(learned);   // display what we've learned
 }
