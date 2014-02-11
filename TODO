@@ -1,11 +1,15 @@
 meaning TODO
 ============
+- how to avoid hard-coding parse logic?
 - complex meanings (combinations of previously-learned definitions) >and
--- iterate through meanings
--- check if we know the meanings to all newly attached meanings 
+  - iterate through meanings for query output
+  - check if we know the meanings to all newly attached meanings 
 - parse "what (something else here) is __?"
+  - "roots" approach f-m-l (first-middle-last)
+  - stack keeps track of f-m-l matches?
+  - pattern = ["what", "is", "{1}", "?"];
 - take away hard codings of parsed tokens
 - abstract out parse function
 
 - add context to meaning
--- >when
+  - >when
