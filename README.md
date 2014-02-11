@@ -3,7 +3,8 @@ meaning
 
 a quest for meaning
 
-== example output
+## example output
+
     > x is y and z -- true
     > what is x? -- y,z
     > pizza is food -- true
