@@ -1,6 +1,11 @@
 meaning TODO
 ============
 - how to avoid hard-coding parse logic?
+  - connect commands to abstract commands (=, ==)
+  - connect commands to dynamic commands (new words, etc.)
+  - var keywords = {
+      "is":"=",   // but how would this know if this is a question?
+    }
 - complex meanings (combinations of previously-learned definitions) >and
   - iterate through meanings for query output
   - check if we know the meanings to all newly attached meanings 
