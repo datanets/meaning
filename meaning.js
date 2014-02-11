@@ -8,6 +8,7 @@ function init() {
   commands.push("x is y");
   commands.push("what is x?");
   commands.push("is x y?");
+  commands.push("x is y and z");
   for (i = 0; i < commands.length; i++) {
     document.getElementById('command-list').innerHTML +=
       "<li>" + commands[i] + "</li>";
