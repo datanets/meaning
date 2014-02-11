@@ -15,3 +15,8 @@ test( "test meaning equality", function() {
   result = parse( "is x y?" );
   equal( result, true, "passes because meanings are equal" );
 });
+
+test( "test learn complex meaning", function() {
+  result = parse( "x is y and z" );
+  equal( result, true, "passes because x now means y and z" );
+});
