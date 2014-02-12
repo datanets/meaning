@@ -1,5 +1,10 @@
 meaning TODO
 ============
+- how do machines understand meaning?
+  - logic
+  - numerical values
+    - word:id
+
 - how to avoid hard-coding parse logic?
   - connect commands to abstract commands (=, ==)
   - connect commands to dynamic commands (new words, etc.)
