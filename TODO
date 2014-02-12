@@ -16,8 +16,15 @@ meaning TODO
 - relative weights of importance of individual tokens
   - based on how many tokens are present in phrase
     - i.e. 3 words (all "important") ... 10 words (only some are "important")
+    
+- categorization of ideas/subjects
+
 - take away hard codings of parsed tokens
 - abstract out parse function
 
 - add context to meaning
   - >when
+
+- important words:
+  is
+  
