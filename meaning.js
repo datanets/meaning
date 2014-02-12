@@ -51,7 +51,9 @@ function parse(phrase) {
             result = false;
           }
         } else {
-          if (learned[items[i-1]] = {"meaning": [items[i+1]]}) {
+          var newItem = {};
+          newItem[items[i+1]] = "1";
+          if (learned[items[i-1]] = {"meaning": [newItem]}) {
             result = true;
           } else {
             result = false;

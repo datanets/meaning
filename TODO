@@ -4,6 +4,8 @@ meaning TODO
   - logic
   - numerical values
     - word:id
+  - order
+    - learn grammar by learning the common order of lists of [word:id, ...]
 
 - how to avoid hard-coding parse logic?
   - connect commands to abstract commands (=, ==)
@@ -11,6 +13,7 @@ meaning TODO
   - var keywords = {
       "is":"=",   // but how would this know if this is a question?
     }
+
 - complex meanings (combinations of previously-learned definitions) >and
   - iterate through meanings for query output
   - check if we know the meanings to all newly attached meanings 
