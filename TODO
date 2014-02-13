@@ -1,5 +1,12 @@
 meaning TODO
 ============
+- current flow:
+  - give m input
+  - m begins to parse input
+  - m tokenizes input
+  - m iterates through input items and assign weights (how often words are used)
+  - m stores meaning when available
+
 - how do machines understand meaning?
   - logic
   - numerical values?

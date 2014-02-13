@@ -11,3 +11,10 @@ a quest for meaning
     > what is pizza? -- food
     > pizza is food and unhealthy -- true
     > what is pizza? -- food,unhealthy
+
+- current flow:
+    - give m input
+    - m begins to parse input
+    - m tokenizes input
+    - m iterates through input items and assign weights (how often words are used)
+    - m stores meaning when available
