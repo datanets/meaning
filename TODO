@@ -1,12 +1,5 @@
 meaning TODO
 ============
-- current flow:
-  - give m input
-  - m begins to parse input
-  - m tokenizes input
-  - m iterates through input items and assign weights (how often words are used)
-  - m stores meaning when available
-
 - how do machines understand meaning?
   - logic
   - numerical values?
@@ -47,3 +40,9 @@ meaning TODO
 
 - do you like ___?
   - metadata
+
+- store how word was used originally?
+  - save pattern surrounding word
+  - do kids need to know parts of speech in order to know speech patterns?
+  - how to know what words are the focus of the sentence?
+    - how to show emphasis in text... with speech, emphasis is easier to convey
