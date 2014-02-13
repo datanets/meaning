@@ -118,15 +118,21 @@ function parse(phrase) {
 
       if (weightPercentage > .8) {
         console.log(items[i] + " looks like a conjunction, verb, or common subject");
+      } else if (weightPercentage > .6) {
+        console.log(items[i] + " looks like a verb");
+      } else {
+        console.log(items[i] + " looks like a noun");
       }
     }
-     
   }
+  console.log('--end of items list--');
 
   return result;
 }
 
 function tokenize(input) {
+  input = input.replace(/([\.?])/g, " $1");
+  console.log(input);
   var items = input.split(" ");
   return items;
 }
