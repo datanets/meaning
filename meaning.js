@@ -55,7 +55,7 @@ function parse(phrase) {
     if (items[i] == "what" && items[i+1] == "is"
       && items[items.length-1].slice(-1) == "?") {
       subject = items[i+2].slice(0,-1);
-      if (learned[subject]) {
+      if (learned[subject] && learned[subject]["meaning"]) {
         result = learned[subject]["meaning"].join(" and ");
       } else {
         // meaning not yet learned
@@ -87,8 +87,8 @@ function parse(phrase) {
       // command: query
       } else if (i == 0) {
         items[i+2] = items[i+2].replace("?", "");  // take out ? marks
-        if (learned[items[i+1]]) {
-          if (learned[items[i+2]]) {
+        if (learned[items[i+1]] && learned[items[i+1]]["meaning"]) {
+          if (learned[items[i+2]] && learned[items[i+2]]["meaning"]) {
             if (learned[items[i+1]]["meaning"].join(",") == learned[items[i+2]]["meaning"].join(",")) {
               result = true;
             } else {
