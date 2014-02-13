@@ -29,6 +29,28 @@ function parse(phrase) {
   items = tokenize(phrase);
 
   for (i = 0; i < items.length; i++) {
+ 
+    // put each item into learned storage
+    // (not actually learned yet)
+    // but count number of times item is used
+    // and put in "weight" field...
+    // this lets program know what words are "important"
+    if (learned[items[i]]) {
+      if (learned[items[i]]["weight"]) {
+        learned[items[i]]["weight"] += 1;
+      } else {
+        var key = "weight";
+        var obj = {};
+        obj[key] = 1;
+        learned[items[i]] = obj;
+      }
+    } else {
+      var key = "weight";
+      var obj = {};
+      obj[key] = 1;
+      learned[items[i]] = obj;
+    }
+    
     // command: query
     if (items[i] == "what" && items[i+1] == "is"
       && items[items.length-1].slice(-1) == "?") {
@@ -56,6 +78,11 @@ function parse(phrase) {
           } else {
             result = false;
           }
+        }
+        if (learned[items[i-1]]["weight"]) {
+          learned[items[i-1]]["weight"] += 1;
+        } else {
+          learned[items[i-1]]["weight"] = 1;
         }
       // command: query
       } else if (i == 0) {

@@ -2,8 +2,11 @@ meaning TODO
 ============
 - how do machines understand meaning?
   - logic
-  - numerical values
+  - numerical values?
     - word:id
+    - word:string (string is actually some numerical value)  
+  - order
+    - learn grammar by learning the common order of lists of [word:id, ...]
 
 - how to avoid hard-coding parse logic?
   - connect commands to abstract commands (=, ==)
@@ -11,6 +14,7 @@ meaning TODO
   - var keywords = {
       "is":"=",   // but how would this know if this is a question?
     }
+
 - complex meanings (combinations of previously-learned definitions) >and
   - iterate through meanings for query output
   - check if we know the meanings to all newly attached meanings 
@@ -21,6 +25,7 @@ meaning TODO
 - relative weights of importance of individual tokens
   - based on how many tokens are present in phrase
     - i.e. 3 words (all "important") ... 10 words (only some are "important")
+  - based on how often certain words are used with program
     
 - categorization of ideas/subjects
 
@@ -32,4 +37,6 @@ meaning TODO
 
 - important words:
   is
-  
+
+- do you like ___?
+  - metadata
