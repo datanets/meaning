@@ -28,6 +28,8 @@ function parse(phrase) {
   var result = "";
   items = tokenize(phrase);
 
+  var totalLearnedItems = Object.keys(learned).length;
+
   for (i = 0; i < items.length; i++) {
  
     // put each item into learned storage
@@ -50,7 +52,8 @@ function parse(phrase) {
       obj[key] = 1;
       learned[items[i]] = obj;
     }
-    
+
+    /*
     // command: query
     if (items[i] == "what" && items[i+1] == "is"
       && items[items.length-1].slice(-1) == "?") {
@@ -103,7 +106,23 @@ function parse(phrase) {
       } else {
       }
     }
+    */
   }
+  
+  // look back over phrase and assign guesses at parts of speech
+  for (i = 0; i < items.length; i++) {
+    if (learned[items[i]]["weight"]) {
+      var weightPercentage = (learned[items[i]]["weight"]/totalLearnedItems);
+      
+      // console.log("weight percentage: " + learned[items[i]]["weight"] + "/" + totalLearnedItems + "=" + weightPercentage + "%");
+
+      if (weightPercentage > .8) {
+        console.log(items[i] + " looks like a conjunction, verb, or common subject");
+      }
+    }
+     
+  }
+
   return result;
 }
 
