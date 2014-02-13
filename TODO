@@ -2,8 +2,9 @@ meaning TODO
 ============
 - how do machines understand meaning?
   - logic
-  - numerical values
+  - numerical values?
     - word:id
+    - word:string (string is actually some numerical value)  
   - order
     - learn grammar by learning the common order of lists of [word:id, ...]
 
@@ -24,6 +25,7 @@ meaning TODO
 - relative weights of importance of individual tokens
   - based on how many tokens are present in phrase
     - i.e. 3 words (all "important") ... 10 words (only some are "important")
+  - based on how often certain words are used with program
     
 - categorization of ideas/subjects
 
@@ -35,4 +37,6 @@ meaning TODO
 
 - important words:
   is
-  
+
+- do you like ___?
+  - metadata
