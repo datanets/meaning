@@ -59,7 +59,7 @@ function parse(phrase) {
         result = learned[subject]["meaning"].join(" and ");
       } else {
         // meaning not yet learned
-        result = ask("hmm... what is " + subject + "?");
+        result = ask(subject + "?");
       }
       break;
     } else if (items[i] == "is") {
@@ -95,10 +95,10 @@ function parse(phrase) {
               result = false;
             }
           } else {
-            result = ask("hmm... what is " + items[i+2] + "?");
+            result = ask(items[i+2] + "?");
           }
         } else {
-          result = ask("hmm... what is " + items[i+1] + "?");
+          result = ask(items[i+1] + "?");
         }
       } else {
       }
